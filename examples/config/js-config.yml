@@ -2,7 +2,7 @@ template_url: 'https://docs.meilisearch.com/sample-template.yaml'
 test_files:
   - 'tests/*.js'
   - 'tests/code-samples/*.js' # Are those lines regexp?
-lines: 3 # default: 1
+nb_lines: 3 # default: 1
 comment_symbol: '//' # default language will be handled
 display_final_variable: false # default: true (and is applied only on the last line if false!). /!\ with go (:=) and python.
 oneline: true # default: false (and is applied only on the last line if true)
