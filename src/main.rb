@@ -3,8 +3,15 @@ require 'open-uri'
 require_relative 'gegene'
 require_relative 'config_variables'
 
+if ARGV.length < 1
+  STDERR.puts 'Error: a config file is needed.'
+  STDERR.puts 'Usage:'
+  STDERR.puts '  $ bundle exec ruby src/main.rb <config-file-path>'
+  exit 1
+end
+
 # Global
-$global_config = YAML.load_file('./examples/config/ruby-config.yml')
+$global_config = YAML.load_file(ARGV.first)
 
 # GET CODE SAMPLES IN TESTS FILES
 code_samples = {}
