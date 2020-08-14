@@ -19,7 +19,7 @@ $global_config = YAML.load_file(ARGV.first)
 code_samples = {}
 Dir.glob($global_config[TESTS_FILES]) do |file|
   gegene = Gegene.new(file)
-  new_code_samples = gegene.get_code_samples_in_test_file
+  new_code_samples = gegene.fetch_code_samples_in_test_file
   code_samples.merge!(new_code_samples)
 end
 
