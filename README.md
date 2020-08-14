@@ -10,6 +10,8 @@ These code samples are currently manually written and can contain errors (typo, 
 
 _More about the [code-samples plugin](https://github.com/meilisearch/documentation/tree/master/.vuepress/code-samples) in the MeiliSearch documentation._
 
+_More about [Gégène](https://shadoks.fandom.com/fr/wiki/G%C3%A9g%C3%A8ne)._
+
 ## Give a try!
 
 ```bash
