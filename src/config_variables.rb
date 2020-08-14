@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Constants
 TEMPLATE_URL = 'template_url'
 TESTS_FILES = 'test_files'
