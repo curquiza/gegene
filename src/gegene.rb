@@ -50,6 +50,9 @@ class Gegene
       # WARNING: currently not work for the Go (`:=`)
       line = line.chars.last(line.length - line.index(' = ') - 3).join
     end
+    if should_apply_replacers?
+      line = apply_replacers(line)
+    end
     code_samples[current_id] = add_line(
       code_samples[current_id],
       line,
@@ -68,6 +71,20 @@ class Gegene
 
   def should_remove_final_variable?(line)
     @current_config.display_final_variable == false && @current_config.nb_lines == 1 && line.include?(' = ')
+  end
+
+  def should_apply_replacers?
+    !@current_config.replacers.empty?
+  end
+
+  def apply_replacers(line)
+    @current_config.replacers.each do |replacer|
+      split_index = replacer.index(' ')
+      to_search = replacer[0...split_index]
+      replace_by = replacer[(split_index + 1)..]
+      line = line.gsub(to_search, replace_by)
+    end
+    return line
   end
 
 end

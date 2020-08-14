@@ -22,6 +22,7 @@ RSpec.describe 'MeiliSearch::Index - Stats' do
   end
 
   it 'returns stats of the index' do
+    # GEGENE get_index_stats_1
     response = @index.stats
     expect(response).to be_a(Hash)
     expect(response).not_to be_empty

@@ -5,7 +5,7 @@ test_files:
 nb_lines: 3 # default: 1
 display_final_variable: false # default: true (and is applied only on the last line if false)
 oneline: true # default: false (and is applied only on the last line if true) - not implemented yet
-replacers: # Should handles regexp - not implemented yet
+replacers: # Does not handle regexp yet
   - search: 'indexAndPK.uid'
     replace: "'movies'"
   - search: '/$await /g'

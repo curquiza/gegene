@@ -139,11 +139,13 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     let(:distinct_attribute) { 'title' }
 
     it 'gets default values of distinct attribute' do
+      # GEGENE get_distinct_attribute_1
       response = index.distinct_attribute
       expect(response).to be_nil
     end
 
     it 'updates distinct attribute' do
+      # GEGENE update_distinct_attribute_1 - replacer: distinct_attribute 'skuid'
       response = index.update_distinct_attribute(distinct_attribute)
       expect(response).to have_key('updateId')
       sleep(0.1)
@@ -170,6 +172,7 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     let(:searchable_attributes) { ['title', 'description'] }
 
     it 'gets default values of searchable attributes' do
+      # GEGENE get_searchable_attributes_1
       response = index.searchable_attributes
       expect(response).to eq(default_searchable_attributes)
     end
@@ -182,6 +185,7 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     end
 
     it 'resets searchable attributes' do
+      # GEGENE reset_searchable_attributes_1
       response = index.reset_searchable_attributes
       expect(response).to have_key('updateId')
       sleep(0.1)
@@ -298,12 +302,14 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     let(:stop_words_string) { 'a' }
 
     it 'gets an empty array when there is no stop-words' do
+      # GEGENE get_stop_words_1
       response = index.stop_words
       expect(response).to be_a(Array)
       expect(response).to be_empty
     end
 
     it 'updates stop-words when the body is valid (as an array)' do
+      # GEGENE update_stop_words_1 => replacer: stop_words_array ['the', 'of']
       response = index.update_stop_words(stop_words_array)
       expect(response).to be_a(Hash)
       expect(response).to have_key('updateId')
@@ -333,6 +339,7 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     end
 
     it 'resets stop-words' do
+      # GEGENE reset_stop_words_1
       response = index.reset_stop_words
       expect(response).to be_a(Hash)
       expect(response).to have_key('updateId')

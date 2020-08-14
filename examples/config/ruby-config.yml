@@ -2,3 +2,10 @@ template_url: 'https://docs.meilisearch.com/sample-template.yaml'
 test_files:
   - './examples/tests-suite/ruby-spec/**/*.rb'
 display_final_variable: false
+replacers:
+  - search: '@index.'
+    replace: "client.index('movie')."
+  - search: 'index.'
+    replace: "client.index('movie')."
+  - search: '@client.'
+    replace: 'client.'
