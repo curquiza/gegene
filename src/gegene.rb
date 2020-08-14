@@ -12,17 +12,11 @@ class Gegene
     code_samples = {}
     File.foreach(@filename) do |line|
       if gegene_is_active?
-        current_id = @current_config.code_sample_id
-        code_samples[current_id] = add_line(
-          code_samples[current_id],
-          line,
-          @current_config.indent
-        )
+        apply_gegene_config(line, code_samples)
         @current_config.nb_lines -= 1
         @current_config = nil if @current_config.nb_lines == 0
       elsif gegene_line?(line)
-        @current_config = CurrentConfig.new
-        @current_config.save_individual_config_line(line, @comment_prefix)
+        @current_config = CurrentConfig.new(line, @comment_prefix)
       end
     end
     code_samples
@@ -48,6 +42,15 @@ class Gegene
     else
       '//'
     end
+  end
+
+  def apply_gegene_config(line, code_samples)
+    current_id = @current_config.code_sample_id
+    code_samples[current_id] = add_line(
+      code_samples[current_id],
+      line,
+      @current_config.indent
+    )
   end
 
   def add_line(previous_line, new_line, indent_base)
