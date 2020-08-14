@@ -35,9 +35,9 @@ end
 template_file.close
 
 # DISPLAY MISSING CODE SAMPLES AS WARNING
-# unless warnings.empty?
-#   STDERR.puts 'WARNING: code samples not found for these keys:'
-#   warnings.each do |key|
-#     STDERR.puts "  - #{key}" unless key.start_with?('#', '---')
-#   end
-# end
+unless warnings.empty?
+  STDERR.puts 'WARNING: code samples not found for these keys:'
+  warnings.each do |key|
+    STDERR.puts "  - #{key}" unless key.start_with?('#', '---')
+  end
+end
