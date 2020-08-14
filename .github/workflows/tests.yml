@@ -9,7 +9,7 @@ on:
 jobs:
   rspec:
     name: tests
-    runs-on: ubuntu-latesta
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
