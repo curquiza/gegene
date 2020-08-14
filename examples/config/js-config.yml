@@ -1,0 +1,14 @@
+template_url: 'https://docs.meilisearch.com/sample-template.yaml'
+test_files:
+  - 'tests/*.js'
+  - 'tests/code-samples/*.js'
+nb_lines: 3 # default: 1
+display_final_variable: false # default: true (and is applied only on the last line if false)
+oneline: true # default: false (and is applied only on the last line if true) - not implemented yet
+replacers: # Should handles regexp - not implemented yet
+  - search: 'indexAndPK.uid'
+    replace: "'movies'"
+  - search: '/$await /g'
+    replace: ''
+  - search: './examples/node/small_movies.json'
+    replace: './movies.json'
