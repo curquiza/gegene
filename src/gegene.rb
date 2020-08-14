@@ -46,6 +46,10 @@ class Gegene
 
   def apply_gegene_config(line, code_samples)
     current_id = @current_config.code_sample_id
+    if should_remove_final_variable?(line)
+      # WARNING: currently not work for the Go (`:=`)
+      line = line.chars.last(line.length - line.index(' = ') - 3).join
+    end
     code_samples[current_id] = add_line(
       code_samples[current_id],
       line,
@@ -60,6 +64,10 @@ class Gegene
       indented_new_line = new_line.delete_prefix(indent_base).gsub(/\n/, "")
       "#{previous_line}\n  #{indented_new_line}"
     end
+  end
+
+  def should_remove_final_variable?(line)
+    @current_config.display_final_variable == false && @current_config.nb_lines == 1 && line.include?(' = ')
   end
 
 end

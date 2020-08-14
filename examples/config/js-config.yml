@@ -3,9 +3,9 @@ test_files:
   - 'tests/*.js'
   - 'tests/code-samples/*.js'
 nb_lines: 3 # default: 1
-display_final_variable: false # default: true (and is applied only on the last line if false!). /!\ with go (:=) and python.
-oneline: true # default: false (and is applied only on the last line if true)
-replacers: # Should handles regexp
+display_final_variable: false # default: true (and is applied only on the last line if false)
+oneline: true # default: false (and is applied only on the last line if true) - not implemented yet
+replacers: # Should handles regexp - not implemented yet
   - search: 'indexAndPK.uid'
     replace: "'movies'"
   - search: '/$await /g'
