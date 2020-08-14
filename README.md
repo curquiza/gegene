@@ -13,7 +13,34 @@ _More about the [code-samples plugin](https://github.com/meilisearch/documentati
 ## Give a try!
 
 ```bash
-$ bundle install
-$ bundle exec ruby src/main.rb > .code-samples.meilisearch.yaml
+$ bundle install --without development
+$ bundle exec ruby src/main.rb './examples/config/php-config.yml' > .code-samples.meilisearch.yaml
 $ cat .code-samples.meilisearch.yaml
+```
+
+## Contributing
+
+Install dependencies:
+
+```bash
+$ bundle install --with development
+```
+
+Run tests and the linter:
+
+```bash
+# Run the tests
+$ tests/run_tests.sh
+# Check the linter errors
+$ bundle exec rubocop src/
+# Auto-correct the linter errors
+$ bundle exec rubocop -a src/
+```
+
+If you think the remaining linter errors are acceptable, do not add any `rubocop` in-line comments in the code.<br>
+This project uses a `rubocop_todo.yml` file that is generated. Do not modify this file manually.<br>
+To update it, run the following command:
+
+```bash
+$ bundle exec rubocop --auto-gen-config src/
 ```

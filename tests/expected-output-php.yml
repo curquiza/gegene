@@ -1,0 +1,121 @@
+# This file is generated.
+# For any changes, refer to the CONTRIBUTING.md guidelines.
+---
+# This code-samples file is used by the MeiliSearch documentation
+# Every example written here will be automatically fetched by
+# the documentation on build
+# You can read more on https://github.com/meilisearch/documentation/tree/master/.vuepress/code-samples
+---
+get_one_index_1: |-
+  $client->showIndex('movies');
+list_all_indexes_1: |-
+  $client->getAllIndexes();
+create_an_index_1: |-
+  $client->createIndex('movies', ['primaryKey' => 'movie_id']);
+update_an_index_1: |-
+  $client->getIndex('movies')->update(['primaryKey' => 'movie_review_id']);
+delete_an_index_1: |-
+  $client->deleteIndex('movies');
+get_one_document_1: |-
+  $client->getIndex('movies')->getDocument($doc['id']);
+get_documents_1: |-
+  $index2->getDocuments();
+add_or_replace_documents_1: |-
+add_or_update_documents_1: |-
+delete_all_documents_1: |-
+  $client->getIndex('movies')->deleteAllDocuments();
+delete_one_document_1: |-
+  $client->getIndex('movies')->deleteDocument(25684);
+delete_documents_1: |-
+  $client->getIndex('movies')->deleteDocuments([23488, 153738, 437035, 363869]);
+search_1: |-
+  $client->getIndex('movies')->search('American ninja');
+get_update_1: |-
+  $client->getIndex('movies')->getUpdateStatus(1);
+get_all_updates_1: |-
+  $client->getIndex('movies')->getAllUpdateStatus();
+get_keys_1: |-
+get_settings_1: |-
+  $client->getIndex('movies')->getSettings();
+update_settings_1: |-
+reset_settings_1: |-
+  $client->getIndex('movies')->resetSettings();
+get_synonyms_1: |-
+  $client->getIndex('movies')->getSynonyms();
+update_synonyms_1: |-
+reset_synonyms_1: |-
+  $client->getIndex('movies')->resetSynonyms();
+get_stop_words_1: |-
+  $client->getIndex('movies')->getStopWords();
+update_stop_words_1: |-
+reset_stop_words_1: |-
+  $client->getIndex('movies')->resetStopWords();
+get_ranking_rules_1: |-
+  $client->getIndex('movies')->getRankingRules();
+update_ranking_rules_1: |-
+reset_ranking_rules_1: |-
+  $client->getIndex('movies')->resetRankingRules();
+get_distinct_attribute_1: |-
+  $client->getIndex('movies')->getDistinctAttribute();
+update_distinct_attribute_1: |-
+reset_distinct_attribute_1: |-
+  $client->getIndex('movies')->resetDistinctAttribute();
+get_searchable_attributes_1: |-
+  $client->getSearchableAttributes();
+update_searchable_attributes_1: |-
+reset_searchable_attributes_1: |-
+  $client->getIndex('movies')->resetSearchableAttributes();
+get_attributes_for_faceting_1: |-
+  $client->getIndex('movies')->getAttributesForFaceting();
+update_attributes_for_faceting_1: |-
+reset_attributes_for_faceting_1: |-
+  $client->getIndex('movies')->resetAttributesForFaceting();
+get_displayed_attributes_1: |-
+  $client->getDisplayedAttributes();
+update_displayed_attributes_1: |-
+reset_displayed_attributes_1: |-
+  $client->getIndex('movies')->resetDisplayedAttributes();
+get_index_stats_1: |-
+  $client->getIndex('movies')->stats();
+get_indexes_stats_1: |-
+  $client->stats();
+get_health_1: |-
+  $client->health();
+update_health_1: |-
+get_version_1: |-
+  $client->version();
+distinct_attribute_guide_1: |-
+field_properties_guide_searchable_1: |-
+field_properties_guide_displayed_1: |-
+filtering_guide_1: |-
+filtering_guide_2: |-
+filtering_guide_3: |-
+filtering_guide_4: |-
+search_parameter_guide_query_1: |-
+search_parameter_guide_offset_1: |-
+search_parameter_guide_limit_1: |-
+search_parameter_guide_retrieve_1: |-
+search_parameter_guide_crop_1: |-
+search_parameter_guide_highlight_1: |-
+search_parameter_guide_filter_1: |-
+search_parameter_guide_filter_2: |-
+search_parameter_guide_matches_1: |-
+settings_guide_synonyms_1: |-
+settings_guide_stop_words_1: |-
+settings_guide_ranking_rules_1: |-
+settings_guide_distinct_1: |-
+settings_guide_searchable_1: |-
+settings_guide_displayed_1: |-
+documents_guide_add_movie_1: |-
+search_guide_1: |-
+search_guide_2: |-
+getting_started_create_index_md: |-
+getting_started_add_documents_md: |-
+getting_started_search_md: |-
+faceted_search_update_settings_1: |-
+faceted_search_facet_filters_1: |-
+faceted_search_facets_distribution_1: |-
+faceted_search_walkthrough_attributes_for_faceting_1: |-
+faceted_search_walkthrough_facet_filters_1: |-
+faceted_search_walkthrough_facets_distribution_1: |-
+add_movies_json_1: |-

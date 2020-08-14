@@ -1,0 +1,11 @@
+template_url: 'https://docs.meilisearch.com/sample-template.yaml'
+test_files:
+  - './examples/tests-suite/php-tests/**/*.php'
+display_final_variable: false
+replacers:
+  - search: '$this->index->'
+    replace: "$client->getIndex('movies')->"
+  - search: '$index->'
+    replace: "$client->getIndex('movies')->"
+  - search: '$this->client->'
+    replace: "$client->"
