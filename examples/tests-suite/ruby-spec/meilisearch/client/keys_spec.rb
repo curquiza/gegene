@@ -10,6 +10,7 @@ RSpec.describe 'MeiliSearch::Client - Keys' do
   after(:all) { clear_all_indexes(@client) }
 
   it 'gets the list of keys' do
+    # GEGENE get_keys_1
     response = @client.keys
     expect(response).to be_a(Hash)
     expect(response.count).to eq(2)
