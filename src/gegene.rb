@@ -12,12 +12,17 @@ class Gegene
     code_samples = {}
     File.foreach(@filename) do |line|
       if gegene_is_active?
-        code_samples[@current_config.code_sample_id] = line.strip
-        @current_config = nil
+        current_id = @current_config.code_sample_id
+        code_samples[current_id] = add_line(
+          code_samples[current_id],
+          line,
+          @current_config.indent
+        )
+        @current_config.nb_lines -= 1
+        @current_config = nil if @current_config.nb_lines == 0
       elsif gegene_line?(line)
         @current_config = CurrentConfig.new
         @current_config.save_individual_config_line(line, @comment_prefix)
-        next
       end
     end
     code_samples
@@ -42,6 +47,15 @@ class Gegene
       '#'
     else
       '//'
+    end
+  end
+
+  def add_line(previous_line, new_line, indent_base)
+    if previous_line.nil?
+      "  #{new_line.strip}"
+    else
+      indented_new_line = new_line.delete_prefix(indent_base).gsub(/\n/, "")
+      "#{previous_line}\n  #{indented_new_line}"
     end
   end
 

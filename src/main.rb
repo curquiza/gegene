@@ -1,13 +1,9 @@
 require 'yaml'
 require 'open-uri'
 require_relative 'gegene'
+require_relative 'config_variables'
 
-# Constants
-TEMPLATE_URL = 'template_url'
-TESTS_FILES = 'test_files'
-DISPLAY_FINAL_VARIABLE = 'display_final_variable'
-
-# Globals
+# Global
 $general_config = YAML.load_file('./examples/config/ruby-config.yml')
 
 # GET CODE SAMPLES IN TESTS FILES
@@ -32,16 +28,16 @@ template_file.each do |line|
     if code_sample.nil?
       warnings << template_id
     else
-      puts "  #{code_sample}"
+      puts code_sample
     end
   end
 end
 template_file.close
 
 # DISPLAY MISSING CODE SAMPLES AS WARNING
-unless warnings.empty?
-  STDERR.puts 'WARNING: code samples not found for these keys:'
-  warnings.each do |key|
-    STDERR.puts "  - #{key}" unless key.start_with?('#', '---')
-  end
-end
+# unless warnings.empty?
+#   STDERR.puts 'WARNING: code samples not found for these keys:'
+#   warnings.each do |key|
+#     STDERR.puts "  - #{key}" unless key.start_with?('#', '---')
+#   end
+# end
