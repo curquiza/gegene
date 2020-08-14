@@ -14,7 +14,7 @@ _More about the [code-samples plugin](https://github.com/meilisearch/documentati
 
 ```bash
 $ bundle install --without development
-$ bundle exec ruby src/main.rb './examples/config/php-config.yml' > .code-samples.meilisearch.yaml
+$ bundle exec ruby src/main.rb './examples/config/php-config.yml' > '.code-samples.meilisearch.yaml'
 $ cat .code-samples.meilisearch.yaml
 ```
 
