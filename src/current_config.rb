@@ -11,7 +11,7 @@ class CurrentConfig
     @indent = get_indent(config_line, gegene_comment_prefix)
     @display_final_variable = display_final_variable_default_value
     @nb_lines = nb_lines_default_value
-    @replacers = []
+    @replacers = replacers_default_value
     get_individual_config(config_line)
   end
 
@@ -26,12 +26,23 @@ class CurrentConfig
   end
 
   def display_final_variable_default_value
-    return false if $general_config[DISPLAY_FINAL_VARIABLE] == false
+    return false if $global_config[DISPLAY_FINAL_VARIABLE] == false
     true
   end
 
+  def replacers_default_value
+    global_replacers = $global_config[GLOBAL_REPLACERS]
+    if global_replacers
+      global_replacers.map do |replacer|
+        "#{replacer['search']} #{replacer['replace']}"
+      end
+    else
+      []
+    end
+  end
+
   def nb_lines_default_value
-    $general_config[NB_LINES] || 1
+    $global_config[NB_LINES] || 1
   end
 
   def get_individual_config(config_line)
@@ -47,7 +58,7 @@ class CurrentConfig
         when NB_LINES
           @nb_lines = indiv_value.to_i
         when REPLACER
-          @replacers << indiv_value
+          @replacers.unshift(indiv_value)
         end
       end
     end
