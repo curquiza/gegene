@@ -14,7 +14,7 @@ Dir.glob($general_config[TESTS_FILES]) do |file|
   code_samples.merge!(new_code_samples)
 end
 
-# DISPLAY FINAL CODE-SAMPLE FILE
+# DISPLAY FINAL CODE-SAMPLES FILE
 warnings = []
 puts '# This file is generated.'
 puts '# For any changes, refer to the CONTRIBUTING.md guidelines.'

@@ -35,6 +35,7 @@ RSpec.describe 'MeiliSearch::Index - Search' do
   end
 
   it 'does a basic search in index' do
+    # GEGENE search_1 => replacer: @index client.index('movie')
     response = @index.search('prince')
     expect(response).to be_a(Hash)
     expect(response.keys).to contain_exactly(*default_search_response_keys)

@@ -80,11 +80,11 @@ RSpec.describe 'MeiliSearch::Client - Indexes' do
   end
 
   it 'shows a specific index' do
-    # GEGENE get_one_index_1 => replacer: @uid2 'movies'
-    response = @client.show_index(@uid2)
-    expect(response).to be_a(Hash)
-    expect(response['uid']).to eq(@uid2)
-    expect(response['primaryKey']).to eq(@primary_key)
+    # GEGENE get_one_index_1 => replacer: @uid2 'movies' - display_final_variable: true
+    index = @client.show_index(@uid2)
+    expect(index).to be_a(Hash)
+    expect(index['uid']).to eq(@uid2)
+    expect(index['primaryKey']).to eq(@primary_key)
   end
 
   it 'returns an index object based on uid' do
