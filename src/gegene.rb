@@ -48,10 +48,7 @@ class Gegene
   end
 
   def apply_gegene_config_to_line(line)
-    if should_remove_final_variable?(line)
-      # WARNING: currently not work for the Go (` := `)
-      line = line.chars.last(line.length - line.index(' = ') - 3).join
-    end
+    line = apply_final_variable_removal(line) if should_remove_final_variable?(line)
     line = apply_replacers(line) if should_apply_replacers?
     line = remove_comment_chars(line) if line.strip.start_with? comment_chars
     line
@@ -68,6 +65,11 @@ class Gegene
 
   def should_remove_final_variable?(line)
     @current_config.display_final_variable == false && @current_config.nb_lines == 1 && line.include?(' = ')
+  end
+
+  def apply_final_variable_removal(line)
+    # WARNING: currently not work for the Go (` := `)
+    line.chars.last(line.length - line.index(' = ') - 3).join
   end
 
   def should_apply_replacers?
