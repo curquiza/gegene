@@ -175,7 +175,7 @@ getting_started_search_md: |-
   [About this package](https://github.com/meilisearch/meilisearch-php/)
 ```
 
-*(The `\` above is only to avoid the README highlight to be messed up, the [real lines](https://github.com/curquiza/gegene/blob/691eeeb2d51fd68269e517a01cc618738bfc6f0b/tests/expected-output-php.yml#L137-L142) don't contain it.)*
+*(The `\` above is only to avoid the README highlight to be messed up, the [real lines](https://github.com/curquiza/gegene/blob/370c62a807a73d59da525311b3b062235cdf70fc/tests/expected-output-php.yml#L137-L142) don't contain it.)*
 
 ## Contributing
 
