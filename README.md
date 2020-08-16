@@ -1,4 +1,4 @@
-# Gégène (WIP) <!-- omit in TOC -->
+# Gégène <!-- omit in TOC -->
 
 Gégène is a **Meili's internal tool** to generate the `.code-samples` file (available in the MeiliSearch SDKs) based on the already existing tests suite of the SDK.<br>
 **This way, we can ensure the code snippets are tested and up-to-date.**
