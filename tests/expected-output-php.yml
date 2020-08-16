@@ -61,7 +61,7 @@ update_distinct_attribute_1: |-
 reset_distinct_attribute_1: |-
   $client->getIndex('movies')->resetDistinctAttribute();
 get_searchable_attributes_1: |-
-  $client->getSearchableAttributes();
+  $client->getIndex('movies')->getSearchableAttributes();
 update_searchable_attributes_1: |-
 reset_searchable_attributes_1: |-
   $client->getIndex('movies')->resetSearchableAttributes();
@@ -71,7 +71,7 @@ update_attributes_for_faceting_1: |-
 reset_attributes_for_faceting_1: |-
   $client->getIndex('movies')->resetAttributesForFaceting();
 get_displayed_attributes_1: |-
-  $client->getDisplayedAttributes();
+  $client->getIndex('movies')->getDisplayedAttributes();
 update_displayed_attributes_1: |-
 reset_displayed_attributes_1: |-
   $client->getIndex('movies')->resetDisplayedAttributes();
