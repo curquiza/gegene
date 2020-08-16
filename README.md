@@ -89,7 +89,7 @@ get_version_1: |-
 
 The `$response` is removed because `display_final_variable` is globally set to `false` by default.
 
-By using the config file given in example that contains global `replacers`, we will finally get:
+By using the [config file given in example](https://github.com/curquiza/gegene#example-) that contains global `replacers`, we will finally get:
 
 ```yml
 get_version_1: |-
