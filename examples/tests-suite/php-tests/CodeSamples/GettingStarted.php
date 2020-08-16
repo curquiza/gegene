@@ -23,7 +23,7 @@ final class GettingStartedTest extends TestCase
 {
     public function completeGettingStarted(): void
     {
-        // GEGENE getting_started_create_index_md => nb_lines: 5 - replacer: $movies_index $index
+        // GEGENE getting_started_create_index_md => nb_lines: 5 ; replacer: $movies_index $index
         $client = new Client('http://127.0.0.1:7700');
         $movies_index = $client->createIndex('movies');
         // ```
@@ -33,7 +33,7 @@ final class GettingStartedTest extends TestCase
         $this->assertSame('movies', $movies_index->getUid());
         $this->assertNull($movies_index->getPrimaryKey());
 
-        // GEGENE getting_started_add_documents_md => nb_lines: 4 - replacer: ../datasets/movies.json movies.json - replacer: $movies_index $index
+        // GEGENE getting_started_add_documents_md => nb_lines: 4 ; replacer: ../datasets/movies.json movies.json ; replacer: $movies_index $index
         // ```php
         $movies_json = file_get_contents('../datasets/movies.json');
         $movies = json_decode($movies_json);
@@ -51,7 +51,7 @@ final class GettingStartedTest extends TestCase
         $this->assertCount(20, $response);
         $this->assertSame(19654, $movies_index->stats['numberOfDocuments']);
 
-        // GEGENE getting_started_search_md => nb_lines: 2 - replacer: $movies_index $index
+        // GEGENE getting_started_search_md => nb_lines: 2 ; replacer: $movies_index $index
         // ```php
         $search = $movies_index->search('botman');
 

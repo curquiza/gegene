@@ -72,7 +72,7 @@ RSpec.describe 'MeiliSearch::Index - Documents' do
     it 'updates documents in index (as an array of documents)' do
       id1 = 123
       id2 = 456
-      # GEGENE add_or_update_documents_1 => nb_lines: 5 - replacer: id1 123 - replacer: id2 456
+      # GEGENE add_or_update_documents_1 => nb_lines: 5 ; replacer: id1 123 ; replacer: id2 456
       updated_documents = [
         { objectId: id1,  title: 'Sense and Sensibility' },
         { objectId: id2,  title: 'The Little Prince' }
