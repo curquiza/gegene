@@ -110,8 +110,36 @@ documents_guide_add_movie_1: |-
 search_guide_1: |-
 search_guide_2: |-
 getting_started_create_index_md: |-
+  ```bash
+  $ composer require meilisearch/meilisearch-php
+  ```
+  
+  ```php
+  <?php
+  
+  require_once __DIR__ . '/vendor/autoload.php';
+  
+  use MeiliSearch\Client;
+  
+  $client = new Client('http://127.0.0.1:7700');
+  $index = $client->createIndex('movies');
+  ```
+  
+  [About this package](https://github.com/meilisearch/meilisearch-php/)
 getting_started_add_documents_md: |-
+  ```php
+  $movies_json = file_get_contents('movies.json');
+  $movies = json_decode($movies_json);
+  $client->getIndex('movies')->addDocuments($movies);
+  ```
+  
+  [About this package](https://github.com/meilisearch/meilisearch-php/)
 getting_started_search_md: |-
+  ```php
+  $client->getIndex('movies')->search('botman');
+  ```
+  
+  [About this package](https://github.com/meilisearch/meilisearch-php/)
 faceted_search_update_settings_1: |-
 faceted_search_facet_filters_1: |-
 faceted_search_facets_distribution_1: |-

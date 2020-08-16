@@ -13,7 +13,9 @@ class Gegene
     code_samples = {}
     File.foreach(@filename) do |line|
       if gegene_is_active?
-        apply_gegene_config(line, code_samples)
+        line = apply_gegene_config_to_line(line)
+        current_id = @current_config.code_sample_id
+        code_samples[current_id] = add_line(code_samples[current_id], line, @current_config.indent)
         @current_config.nb_lines -= 1
         @current_config = nil if @current_config.nb_lines.zero?
       elsif gegene_line?(line)
@@ -45,18 +47,11 @@ class Gegene
     end
   end
 
-  def apply_gegene_config(line, code_samples)
-    current_id = @current_config.code_sample_id
-    if should_remove_final_variable?(line)
-      # WARNING: currently not work for the Go (`:=`)
-      line = line.chars.last(line.length - line.index(' = ') - 3).join
-    end
+  def apply_gegene_config_to_line(line)
+    line = apply_final_variable_removal(line) if should_remove_final_variable?(line)
     line = apply_replacers(line) if should_apply_replacers?
-    code_samples[current_id] = add_line(
-      code_samples[current_id],
-      line,
-      @current_config.indent
-    )
+    line = remove_comment_chars(line) if line.strip.start_with? comment_chars
+    line
   end
 
   def add_line(previous_line, new_line, indent_base)
@@ -72,6 +67,11 @@ class Gegene
     @current_config.display_final_variable == false && @current_config.nb_lines == 1 && line.include?(' = ')
   end
 
+  def apply_final_variable_removal(line)
+    # WARNING: currently not work for the Go (` := `)
+    line.chars.last(line.length - line.index(' = ') - 3).join
+  end
+
   def should_apply_replacers?
     !@current_config.replacers.empty?
   end
@@ -84,5 +84,13 @@ class Gegene
       line = line.gsub(to_search, replace_by)
     end
     line
+  end
+
+  def remove_comment_chars(line)
+    if line.strip.start_with? "#{comment_chars} "
+      line.sub("#{comment_chars} ", '')
+    else
+      line.sub(comment_chars, '')
+    end
   end
 end
