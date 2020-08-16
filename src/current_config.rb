@@ -27,9 +27,9 @@ class CurrentConfig
   end
 
   def display_final_variable_default_value
-    return false if $global_config[DISPLAY_FINAL_VARIABLE] == false
+    return true if $global_config[DISPLAY_FINAL_VARIABLE] == true
 
-    true
+    false
   end
 
   def replacers_default_value
