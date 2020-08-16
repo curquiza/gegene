@@ -7,4 +7,4 @@ replacers:
   - search: '$index->'
     replace: "$client->getIndex('movies')->"
   - search: '$this->client->'
-    replace: "$client->"
+    replace: '$client->'
