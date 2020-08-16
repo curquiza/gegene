@@ -122,7 +122,7 @@ getting_started_create_index_md: |-
   use MeiliSearch\Client;
   
   $client = new Client('http://127.0.0.1:7700');
-  $index = $client->createIndex('movies');
+  $movies_index = $client->createIndex('movies');
   ```
   
   [About this package](https://github.com/meilisearch/meilisearch-php/)
@@ -130,13 +130,13 @@ getting_started_add_documents_md: |-
   ```php
   $movies_json = file_get_contents('movies.json');
   $movies = json_decode($movies_json);
-  $client->getIndex('movies')->addDocuments($movies);
+  $movies_index->addDocuments($movies);
   ```
   
   [About this package](https://github.com/meilisearch/meilisearch-php/)
 getting_started_search_md: |-
   ```php
-  $client->getIndex('movies')->search('botman');
+  $movies_index->search('botman');
   ```
   
   [About this package](https://github.com/meilisearch/meilisearch-php/)

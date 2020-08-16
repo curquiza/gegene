@@ -169,7 +169,7 @@ $search = $movies_index->search('botman');
 ```yml
 getting_started_search_md: |-
   ```php
-  $client->getIndex('movies')->search('botman');
+  $movies_index->search('botman');
   \```
 
   [About this package](https://github.com/meilisearch/meilisearch-php/)
