@@ -50,7 +50,7 @@ All the optional keys are **globally** applied but are also individually settabl
 ### Example <!-- omit in TOC -->
 
 ```yml
-template_url: 'https://docs.meilisearch.com/sample-template.yaml'
+template_url: 'https://raw.githubusercontent.com/meilisearch/documentation/master/.vuepress/public/sample-template.yaml'
 test_files:
   - './examples/tests-suite/php-tests/**/*.php'
 replacers:

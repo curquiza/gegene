@@ -1,4 +1,4 @@
-template_url: 'https://docs.meilisearch.com/sample-template.yaml'
+template_url: 'https://raw.githubusercontent.com/meilisearch/documentation/master/.vuepress/public/sample-template.yaml'
 test_files:
   - 'tests/*.js'
   - 'tests/code-samples/*.js'
