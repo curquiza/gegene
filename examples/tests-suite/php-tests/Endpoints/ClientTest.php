@@ -32,7 +32,7 @@ final class ClientTest extends TestCase
 
     public function testCreateIndexWithUidAndPrimaryKey(): void
     {
-        // GEGENE create_an_index_1 => replacer: 'index' 'movies' - replacer: ObjectId movie_id
+        // GEGENE create_an_index_1 => replacer: 'index' 'movies' ; replacer: ObjectId movie_id
         $index = $this->client->createIndex('index', ['primaryKey' => 'ObjectId']);
 
         $this->assertInstanceOf(Indexes::class, $index);

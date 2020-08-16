@@ -51,6 +51,7 @@ reset_ranking_rules_1: |-
 get_distinct_attribute_1: |-
   client.index('movie').distinct_attribute
 update_distinct_attribute_1: |-
+  client.index('movie').update_distinct_attribute('skuid')
 reset_distinct_attribute_1: |-
 get_searchable_attributes_1: |-
   client.index('movie').searchable_attributes

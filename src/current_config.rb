@@ -45,7 +45,7 @@ class CurrentConfig
 
   def get_individual_config(config_line)
     optional_config = config_line.strip.split('=>')[1]
-    optional_config&.split('-')&.each do |option_string|
+    optional_config&.split(OPTIONS_SEPARATOR)&.each do |option_string|
       option = option_string.split(':').map(&:strip)
       dispatch_option_into_config(option)
     end

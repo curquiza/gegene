@@ -20,7 +20,7 @@ RSpec.describe 'MeiliSearch::Client - Indexes' do
   end
 
   it 'creates an index with primary-key' do
-    # GEGENE create_an_index_1 => replacer: @uid2 'movies' - replacer: @primary_key 'movie_id'
+    # GEGENE create_an_index_1 => replacer: @uid2 'movies' ; replacer: @primary_key 'movie_id'
     index = @client.create_index(@uid2, primaryKey: @primary_key)
     expect(index).to be_a(MeiliSearch::Index)
     expect(index.uid).to eq(@uid2)
@@ -80,7 +80,7 @@ RSpec.describe 'MeiliSearch::Client - Indexes' do
   end
 
   it 'shows a specific index' do
-    # GEGENE get_one_index_1 => replacer: @uid2 'movies' - display_final_variable: true
+    # GEGENE get_one_index_1 => replacer: @uid2 'movies' ; display_final_variable: true
     index = @client.show_index(@uid2)
     expect(index).to be_a(Hash)
     expect(index['uid']).to eq(@uid2)

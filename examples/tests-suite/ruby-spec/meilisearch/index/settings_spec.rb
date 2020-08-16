@@ -145,7 +145,7 @@ RSpec.describe 'MeiliSearch::Index - Settings' do
     end
 
     it 'updates distinct attribute' do
-      # GEGENE update_distinct_attribute_1 - replacer: distinct_attribute 'skuid'
+      # GEGENE update_distinct_attribute_1 => replacer: (distinct_attribute) ('skuid')
       response = index.update_distinct_attribute(distinct_attribute)
       expect(response).to have_key('updateId')
       sleep(0.1)
