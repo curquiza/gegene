@@ -22,6 +22,7 @@ _More about [Gégène](https://shadoks.fandom.com/fr/wiki/G%C3%A9g%C3%A8ne)._
 ## How to Run
 
 ```bash
+$ bundle install --without development
 $ bundle exec ruby src/main.rb <config-file-path> > '.code-samples.meilisearch.yaml'
 ```
 
