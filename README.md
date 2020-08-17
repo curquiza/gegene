@@ -12,7 +12,7 @@ _More about the [code-samples plugin](https://github.com/meilisearch/documentati
 
 _More about [Gégène](https://shadoks.fandom.com/fr/wiki/G%C3%A9g%C3%A8ne)._
 
-## Table of Contents ! <!-- omit in TOC -->
+## Table of Contents <!-- omit in TOC -->
 
 - [How to Run](#how-to-run)
 - [The Config File](#the-config-file)
